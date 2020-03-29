@@ -18,10 +18,11 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create all database on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- Annotated entity classes -->
-<!--        <mapping class="com.jvmhub.tutorial.entity.AppUser"/>-->
+<!--        <mapping class="by.bolbas.study.model.User"/>-->
+        <mapping resource="config/user.cfg.xml"/>
 
     </session-factory>
 </hibernate-configuration>
