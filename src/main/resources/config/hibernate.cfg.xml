@@ -24,6 +24,7 @@
 <!--        <mapping class="by.bolbas.study.model.User"/>-->
         <mapping resource="config/role.cfg.xml"/>
         <mapping resource="config/user.cfg.xml"/>
+        <mapping resource="config/userInfo.cfg.xml"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -6,6 +6,8 @@ public class User {
     private int age;
     private String firstName;
     private String lastName;
+    private String login;
+    private UserInfo password;
     private Role role;
 
     public User() {}
@@ -44,6 +46,22 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public UserInfo getPassword() {
+        return password;
+    }
+
+    public void setPassword(UserInfo password) {
+        this.password = password;
     }
 
     public Role getRole() {
