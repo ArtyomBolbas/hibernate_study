@@ -2,22 +2,23 @@ package by.bolbas.study.model;
 
 public class User {
 
-    private long id;
+    private Long id;
     private int age;
     private String firstName;
     private String lastName;
+    private Role role;
 
     public User() {}
 
-    public User(long id) {
+    public User(Long id) {
         this.id = id;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,5 +44,13 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

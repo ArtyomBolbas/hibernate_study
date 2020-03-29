@@ -22,6 +22,7 @@
 
         <!-- Annotated entity classes -->
 <!--        <mapping class="by.bolbas.study.model.User"/>-->
+        <mapping resource="config/role.cfg.xml"/>
         <mapping resource="config/user.cfg.xml"/>
 
     </session-factory>
