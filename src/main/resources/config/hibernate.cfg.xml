@@ -25,6 +25,7 @@
         <mapping resource="config/role.cfg.xml"/>
         <mapping resource="config/user.cfg.xml"/>
         <mapping resource="config/userInfo.cfg.xml"/>
+        <mapping resource="config/product.cfg.xml"/>
 
     </session-factory>
 </hibernate-configuration>

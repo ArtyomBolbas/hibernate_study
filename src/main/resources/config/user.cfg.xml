@@ -14,8 +14,16 @@
 
         <one-to-one name="password" class="by.bolbas.study.model.UserInfo"/>
 
-        <many-to-one name="role" class="by.bolbas.study.model.Role">
-            <column name="role_id" not-null="true"/>
-        </many-to-one>
+        <set name="roles" table="user_role">
+            <key column="user_id"/>
+            <many-to-many column="role_id" class="by.bolbas.study.model.Role"/>
+        </set>
+
+        <set name="products" table="product">
+            <key>
+                <column name="user_id" not-null="false"/>
+            </key>
+            <one-to-many class="by.bolbas.study.model.Product"/>
+        </set>
     </class>
 </hibernate-mapping>

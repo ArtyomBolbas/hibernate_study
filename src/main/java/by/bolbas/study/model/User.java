@@ -1,5 +1,7 @@
 package by.bolbas.study.model;
 
+import java.util.Set;
+
 public class User {
 
     private Long id;
@@ -8,7 +10,8 @@ public class User {
     private String lastName;
     private String login;
     private UserInfo password;
-    private Role role;
+    private Set<Role> roles;
+    private Set<Product> products;
 
     public User() {}
 
@@ -64,11 +67,19 @@ public class User {
         this.password = password;
     }
 
-    public Role getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 }
