@@ -1,17 +1,31 @@
 package by.bolbas.study.model;
 
-import java.util.Set;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import static javax.persistence.GenerationType.AUTO;
+
+@Entity
+@Table(name = "user_entity")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private Long id;
+
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "firstName", length = 50)
     private String firstName;
+
+    @Column(name = "lastName", length = 50)
     private String lastName;
-    private String login;
-    private UserInfo password;
-    private Set<Role> roles;
-    private Set<Product> products;
 
     public User() {}
 
@@ -51,35 +65,4 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public UserInfo getPassword() {
-        return password;
-    }
-
-    public void setPassword(UserInfo password) {
-        this.password = password;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
 }

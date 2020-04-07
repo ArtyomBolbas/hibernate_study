@@ -21,11 +21,13 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- Annotated entity classes -->
-<!--        <mapping class="by.bolbas.study.model.User"/>-->
-        <mapping resource="config/role.cfg.xml"/>
-        <mapping resource="config/user.cfg.xml"/>
-        <mapping resource="config/userInfo.cfg.xml"/>
-        <mapping resource="config/product.cfg.xml"/>
+        <mapping class="by.bolbas.study.model.User"/>
+        <mapping class="by.bolbas.study.model.Role"/>
+
+<!--        <mapping resource="config/role.cfg.xml"/>-->
+<!--        <mapping resource="config/user.cfg.xml"/>-->
+<!--        <mapping resource="config/userInfo.cfg.xml"/>-->
+<!--        <mapping resource="config/product.cfg.xml"/>-->
 
     </session-factory>
 </hibernate-configuration>
