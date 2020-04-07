@@ -23,6 +23,7 @@
         <!-- Annotated entity classes -->
         <mapping class="by.bolbas.study.model.User"/>
         <mapping class="by.bolbas.study.model.Role"/>
+        <mapping class="by.bolbas.study.model.Product"/>
 
 <!--        <mapping resource="config/role.cfg.xml"/>-->
 <!--        <mapping resource="config/user.cfg.xml"/>-->

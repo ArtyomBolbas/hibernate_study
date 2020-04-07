@@ -1,12 +1,13 @@
 package by.bolbas.study.model;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import java.util.List;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -27,11 +28,8 @@ public class User {
     @Column(name = "lastName", length = 50)
     private String lastName;
 
-    public User() {}
-
-    public User(Long id) {
-        this.id = id;
-    }
+    @OneToMany(/*fetch = LAZY, cascade = ALL, */mappedBy = "user")
+    private List<Product> products;
 
     public Long getId() {
         return id;
@@ -65,4 +63,11 @@ public class User {
         this.lastName = lastName;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }

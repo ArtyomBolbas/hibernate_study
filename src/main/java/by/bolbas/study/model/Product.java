@@ -1,8 +1,28 @@
 package by.bolbas.study.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Table(name = "product")
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne/*(fetch = LAZY)*/
+    @JoinColumn(name = "user_id"/*, referencedColumnName = "id", nullable = false, updatable = false*/)
     private User user;
 
     public Long getId() {
