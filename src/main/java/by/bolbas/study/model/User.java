@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import java.util.List;
@@ -30,6 +31,9 @@ public class User {
 
     @OneToMany(/*fetch = LAZY, cascade = ALL, */mappedBy = "user")
     private List<Product> products;
+
+    @OneToOne(mappedBy = "user")
+    private UserInfo userInfo;
 
     public Long getId() {
         return id;
@@ -69,5 +73,13 @@ public class User {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 }

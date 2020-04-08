@@ -24,6 +24,7 @@
         <mapping class="by.bolbas.study.model.User"/>
         <mapping class="by.bolbas.study.model.Role"/>
         <mapping class="by.bolbas.study.model.Product"/>
+        <mapping class="by.bolbas.study.model.UserInfo"/>
 
 <!--        <mapping resource="config/role.cfg.xml"/>-->
 <!--        <mapping resource="config/user.cfg.xml"/>-->
