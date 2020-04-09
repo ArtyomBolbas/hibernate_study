@@ -1,11 +1,27 @@
 package by.bolbas.study.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.Set;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Table(name = "role")
 public class Role {
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
     public Role() {}

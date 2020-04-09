@@ -4,11 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import java.util.List;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -34,6 +38,12 @@ public class User {
 
     @OneToOne(mappedBy = "user")
     private UserInfo userInfo;
+
+    @ManyToMany
+    @JoinTable(name = "user_role",
+               joinColumns = {@JoinColumn(name = "user_id")},
+               inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private Set<Role> roles;
 
     public Long getId() {
         return id;
@@ -81,5 +91,13 @@ public class User {
 
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
